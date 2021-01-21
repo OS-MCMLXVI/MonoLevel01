@@ -1,0 +1,6 @@
+D:\Korisnici\Goran\Projekti\MonoLevel01\Project.Code\bin\Debug\Project.Code.dll
+D:\Korisnici\Goran\Projekti\MonoLevel01\Project.Code\bin\Debug\Project.Code.pdb
+D:\Korisnici\Goran\Projekti\MonoLevel01\Project.Code\obj\Debug\Project.Code.csprojAssemblyReference.cache
+D:\Korisnici\Goran\Projekti\MonoLevel01\Project.Code\obj\Debug\Project.Code.csproj.CoreCompileInputs.cache
+D:\Korisnici\Goran\Projekti\MonoLevel01\Project.Code\obj\Debug\Project.Code.dll
+D:\Korisnici\Goran\Projekti\MonoLevel01\Project.Code\obj\Debug\Project.Code.pdb
