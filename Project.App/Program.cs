@@ -112,7 +112,7 @@ namespace Project.App
                         _gpa = Console.ReadLine().Trim();
                         _greska = true;
 
-                  } while (float.TryParse(_gpa, out _fgpa) && (_fgpa >= 1.00 && _fgpa <= 5.00));                
+                  } while (!(float.TryParse(_gpa, out _fgpa) && _fgpa >= 1.00 && _fgpa <= 5.00));
 
 
                   // add student...
