@@ -1,4 +1,5 @@
 ﻿using Project.Code;
+using Project.Code.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Project.App
                   string operation;
 
 
-                  while (true)
+                  do
                   {
                         Console.Clear();
                         Console.WriteLine();
@@ -29,25 +30,21 @@ namespace Project.App
                         Console.Write("Operation......:  ");
                         operation = Console.ReadLine().Trim().ToUpper();
 
-                        if (!Validation.CheckOperation(operation))
+                        if (!Operations.operations.Contains(operation))
                         {
-                              Console.WriteLine("Operation non-existing, please use appropriate operation. Press [ESC] for exit or any other key for continue...");
+                              Console.WriteLine("Operation non-existing...  Press [ESC] for exit or any other key for continue...");
                               keyPressed = Console.ReadKey();
 
                               if (keyPressed.Key == ConsoleKey.Escape)
-                                    break;
-
-                              continue;
+                                    Environment.Exit(0);
                         }
 
-                        if (operation == "DISPLAY")
-                        {
-                              Display();
-                              break;
-                        }
+                        if (operation == "ENLIST")
+                              Enlist();
 
-                        Enlist();
-                  }
+                  } while (operation != "DISPLAY");
+
+                  Display();
             }
 
 
@@ -66,87 +63,56 @@ namespace Project.App
                   }
 
                   Console.WriteLine();
-                  Console.WriteLine("> > > > >   Press any key...");
+                  Console.WriteLine(">>>>>  Press any key...");
                   Console.ReadKey();
             }
 
 
             private static void Enlist()
             {
+                  bool _greska = false;
                   string _firstName;
                   string _lastName;
                   string _gpa;
+                  float _fgpa;
 
 
                   Console.WriteLine();
                   Console.WriteLine("Student:");
 
-
-                  while (true)
+                  
+                  do
                   {
                         Console.Write("First name............................:  ");
                         _firstName = Console.ReadLine().Trim();
 
-                        if (Validation.CheckEmptyInput(_firstName))
-                        {
-                              Console.WriteLine("You need to insert value.        Press any key...");
-                              Console.ReadKey();
-                              Console.WriteLine();
-                              continue;
-                        }
+                        if (String.IsNullOrEmpty(_firstName))
+                              Console.WriteLine("You need to insert value...");
 
-                        if (Validation.CheckFirstChar(_firstName))
-                        {
-                              Console.WriteLine("First character must bee letter.        Press any key...");
-                              Console.ReadKey();
-                              Console.WriteLine();
-                              continue;
-                        }
+                  } while (String.IsNullOrEmpty(_firstName));
 
-                        break;
-                  }
-
-
-                  while (true)
+                  
+                  do
                   {
                         Console.Write("Last name.............................:  ");
                         _lastName = Console.ReadLine().Trim();
 
-                        if (Validation.CheckEmptyInput(_lastName))
-                        {
-                              Console.WriteLine("You need to insert value.        Press any key...");
-                              Console.ReadKey();
-                              Console.WriteLine();
-                              continue;
-                        }
+                        if (String.IsNullOrEmpty(_lastName))
+                              Console.WriteLine("You need to insert value...");
 
-                        if (Validation.CheckFirstChar(_lastName))
-                        {
-                              Console.WriteLine("First character must bee letter.        Press any key...");
-                              Console.ReadKey();
-                              Console.WriteLine();
-                              continue;
-                        }
-
-                        break;
-                  }
+                  } while (String.IsNullOrEmpty(_lastName));
 
 
-                  while (true)
+                  do
                   {
+                        if (_greska)
+                              Console.WriteLine("Input number from 1,00 - 5,00 ...");
+
                         Console.Write("GPA...................................:  ");
                         _gpa = Console.ReadLine().Trim();
+                        _greska = true;
 
-                        if (!Validation.CheckNumber(_gpa))
-                        {
-                              Console.WriteLine("You need to insert numerical value.        Press any key...");
-                              Console.ReadKey();
-                              Console.WriteLine();
-                              continue;
-                        }
-
-                        break;
-                  }
+                  } while (float.TryParse(_gpa, out _fgpa) && (_fgpa >= 1.00 && _fgpa <= 5.00));                
 
 
                   // add student...

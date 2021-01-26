@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.Code
+namespace Project.Code.Models
 {
       public class Student : Person
       {

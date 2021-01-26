@@ -42,9 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Operations.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="StudentIdGenerator.cs" />
     <Compile Include="Validation.cs" />
   </ItemGroup>

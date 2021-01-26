@@ -24,7 +24,7 @@ namespace Project.Code
             }
 
 
-            public string IdGenerator()
+            public string GetID()
             {
                   System.Guid guid = System.Guid.NewGuid();
                   return guid.ToString();
