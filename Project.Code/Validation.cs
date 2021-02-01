@@ -15,5 +15,16 @@ namespace Project.Code
 
                   return false;
             }
+
+            public static bool CheckUserInput(string input)
+            {
+                  if (String.IsNullOrEmpty(input))
+                  {
+                        Console.WriteLine("You need to insert value...");
+                        return true;
+                  }
+
+                  return false;
+            }
       }
 }

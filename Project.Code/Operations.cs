@@ -8,6 +8,6 @@ namespace Project.Code
 {
       public static class Operations
       {
-            public static readonly string[] operations = { "ENLIST", "DISPLAY" };
+            public static List<string> operations { get; } = new List<string> { "ENLIST", "DISPLAY" };
       }
 }

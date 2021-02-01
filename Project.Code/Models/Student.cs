@@ -8,18 +8,16 @@ namespace Project.Code.Models
 {
       public class Student : Person
       {
-            public static List<Student> studentsList = new List<Student>();
-            private float _gpa;
+            private float gpa;
 
             public Student(string fName, string lName, float gpa) : base(fName, lName)
             {
-                  this._gpa = gpa;
+                  this.gpa = gpa;
             }
-
 
             public float Gpa
             {
-                  get { return this._gpa; }
+                  get { return this.gpa; }
             }
       }
 }
